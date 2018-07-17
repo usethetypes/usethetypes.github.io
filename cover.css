@@ -104,3 +104,8 @@ body {
 .mastfoot {
   color: rgba(255, 255, 255, .5);
 }
+
+#logo {
+  font-size: 10rem;
+  margin: -3rem; font-family: 'Times New Roman', Times, serif;
+}
