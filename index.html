@@ -30,7 +30,6 @@
 
     <main role="main" class="inner cover">
       <div id="carousel" class="carousel slide" data-ride="carousel">
-        <ol class="carousel-indicators"></ol>
         <div class="carousel-inner"></div>
         <a class="carousel-control-prev" href="#carousel" role="button" data-slide="prev">
           <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -62,10 +61,7 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/popper.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.2/js/bootstrap.min.js"></script>
 
-  <template id="video-li">
-    <li data-target="#carousel"></li>
-  </template>
-  <template id="video-div">
+  <template id="carousel-template">
     <div class="carousel-item">
       <iframe class="d-block w-100" width="560" height="315" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
     </div>
