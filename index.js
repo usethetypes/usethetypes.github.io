@@ -10,7 +10,7 @@ $(() => {
 
   for (let i = 0; i < videoIds.length; ++i) {
     const div = $(divTemplate.html());
-    div.find("> :first-child").attr("src", `https://www.youtube.com/embed/${videoIds[i]}`);
+    div.find("> :first-child").attr("src", `https://www.youtube.com/embed/${videoIds[i]}?rel=0`);
 
     if (i == 0) {
       div.addClass("active");
