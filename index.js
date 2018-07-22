@@ -2,7 +2,8 @@ $(() => {
   const videoIds = [
     "iNeLpmjowwQ",
     "cDYn_la-9vg",
-    "hp-uQZ-MujA"
+    "hp-uQZ-MujA",
+    "uB7ES5-JhQA"
   ];
 
   const divContainer = $("#carousel .carousel-inner");
