@@ -4,7 +4,8 @@ $(() => {
     "cDYn_la-9vg",
     "hp-uQZ-MujA",
     "uB7ES5-JhQA",
-    "vcE9BlW74tg"
+    "vcE9BlW74tg",
+    "sP6Iuwd_Nik"
   ];
 
   const divContainer = $("#carousel .carousel-inner");
