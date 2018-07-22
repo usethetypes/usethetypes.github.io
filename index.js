@@ -3,7 +3,8 @@ $(() => {
     "iNeLpmjowwQ",
     "cDYn_la-9vg",
     "hp-uQZ-MujA",
-    "uB7ES5-JhQA"
+    "uB7ES5-JhQA",
+    "vcE9BlW74tg"
   ];
 
   const divContainer = $("#carousel .carousel-inner");
