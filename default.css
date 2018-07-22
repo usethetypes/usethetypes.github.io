@@ -109,3 +109,8 @@ body {
   font-size: 10rem;
   margin: -3rem; font-family: 'Times New Roman', Times, serif;
 }
+
+.carousel-caption {
+  background-color: #000;
+  opacity: 0.7;
+}
