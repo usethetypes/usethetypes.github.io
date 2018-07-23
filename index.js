@@ -47,12 +47,11 @@ $(() => {
       dataType: "json"
     }).then(response => {
       const slug = `testvideo#${i}`;
-      const anchorTitle = `${slug}: ${response.title}`;
+      const title = `${slug}: ${response.title}`;
       anchor
-        .attr("title", anchorTitle)
-        .attr("alt", anchorTitle);
-      div.find("h5").text(response.title);
-      div.find("p").text(slug);
+        .attr("title", title)
+        .attr("alt", title);
+      div.find("p").text(title);
     });
   }
 });
