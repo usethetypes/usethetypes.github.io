@@ -4,7 +4,7 @@ $(() => {
   }
 
   function makeImageUrl(videoId) {
-    return `https://img.youtube.com/vi/${videoId}/0.jpg`;
+    return `https://img.youtube.com/vi/${videoId}/maxresdefault.jpg`;
   }
 
   function makeNoEmbedUrl(videoId) {
