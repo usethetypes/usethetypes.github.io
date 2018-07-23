@@ -48,8 +48,9 @@ $(() => {
       url: makeNoEmbedUrl(videoId),
       dataType: "json"
     }).then(response => {
-      const slug = typeof video.episode != "undefined" ? `usethetypes#${video.episode}` : "test";
-      const title = `${slug}: ${response.title}`;
+      const title = typeof video.episode == "undefined"
+        ? `TEST: ${response.title}`
+        : response.title;
       anchor
         .attr("title", title)
         .attr("alt", title);
