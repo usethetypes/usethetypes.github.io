@@ -11,14 +11,14 @@
   <link href="default.css" rel="stylesheet">
 </head>
 
-<body class="text-center">
+<body class="transcript">
 
   <div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
     <header class="masthead mb-auto">
       <div class="inner">
         <h3 class="masthead-brand">usethetypes.com</h3>
         <nav class="nav nav-masthead justify-content-center">
-          <a class="nav-link" href="#">Home</a>
+          <a class="nav-link" href="index.html">Home</a>
           <a class="nav-link" href="features.html">Features</a>
           <a class="nav-link" href="contact.html">Contact</a>
         </nav>
@@ -27,6 +27,11 @@
 
     <main role="main" class="inner cover">
       <h2>usethetypes#0: Haskell Stack</h2>
+
+      <p>
+        <a href="https://youtu.be/dN1M8ql1vPQ">Watch video in YouTube</a>
+      </p>
+
       <p class="lead">
         In this episode of usethetypes, I'll show you how to install
         <a href="https://docs.haskellstack.org/en/stable/README/">Haskell
@@ -51,29 +56,29 @@
       </ul>
 
       <h3>Step 1: Install Haskell Stack</h3>
-      <pre>
-      wget -qO- https://get.haskellstack.org/ | sh
-      echo 'export PATH=$HOME/.local/bin:$PATH' >> ~/.bashrc
-      mkdir $HOME/.local/bin
-      </pre>
+<pre>
+wget -qO- https://get.haskellstack.org/ | sh
+echo 'export PATH=$HOME/.local/bin:$PATH' >> ~/.bashrc
+mkdir $HOME/.local/bin
+</pre>
 
       <h3>Step 2: Check Haskell Stack version</h3>
-      <pre>
-      stack --version
-      </pre>
+<pre>
+stack --version
+</pre>
 
       <h3>Step 3: Create a "Hello World" project</h3>
-      <pre>
-      mkdir src
-      cd src
-      stack new hello-world simple --resolver=lts-12.0
-      cd hello-world
-      git init
-      echo /.stack-work/ >> .gitignore
-      stack build --fast
-      stack exec hello-world
-      cat src/Main.hs
-      </pre>
+<pre>
+mkdir src
+cd src
+stack new hello-world simple --resolver=lts-12.0
+cd hello-world
+git init
+echo /.stack-work/ >> .gitignore
+stack build --fast
+stack exec hello-world
+cat src/Main.hs
+</pre>
     </main>
 
     <footer class="mastfoot mt-auto">

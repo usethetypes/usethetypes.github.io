@@ -120,3 +120,15 @@ body {
   text-decoration: underline;
   color: yellow;
 }
+
+pre {
+  background-color: silver;
+  padding: 1rem;
+  text-shadow: none;
+  font-weight: bold;
+}
+
+.transcript a {
+  text-decoration: underline;
+  color: orange;
+}
