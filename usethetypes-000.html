@@ -28,8 +28,52 @@
     <main role="main" class="inner cover">
       <h2>usethetypes#0: Haskell Stack</h2>
       <p class="lead">
-        Description of video etc.
+        In this episode of usethetypes, I'll show you how to install
+        <a href="https://docs.haskellstack.org/en/stable/README/">Haskell
+          Stack</a> from scratch on a clean Linux development machine. Stack is
+          the Haskell build tool I will use for many of my other videos and so
+          this setup step will be an important prerequisite for most future
+          tutorials. After following this video, you'll be able to build and run
+          a simple "Hello World" program written in Haskell. You'll also be set
+          up to get stuck into my future videos.
       </p>
+
+      <h3>Notes</h3>
+
+      <ul>
+        <li>
+          Video shows <a href="https://www.ubuntu.com/download/desktop">Ubuntu
+            18.04 LTS Desktop</a></li>
+        <li>I haven't done much to the operating system except install updates,
+          clean up the desktop and install my
+          <a href="https://chrome.google.com/">favourite</a> web browser</li>
+        </li>
+      </ul>
+
+      <h3>Step 1: Install Haskell Stack</h3>
+      <pre>
+      wget -qO- https://get.haskellstack.org/ | sh
+      echo 'export PATH=$HOME/.local/bin:$PATH' >> ~/.bashrc
+      mkdir $HOME/.local/bin
+      </pre>
+
+      <h3>Step 2: Check Haskell Stack version</h3>
+      <pre>
+      stack --version
+      </pre>
+
+      <h3>Step 3: Create a "Hello World" project</h3>
+      <pre>
+      mkdir src
+      cd src
+      stack new hello-world simple --resolver=lts-12.0
+      cd hello-world
+      git init
+      echo /.stack-work/ >> .gitignore
+      stack build --fast
+      stack exec hello-world
+      cat src/Main.hs
+      </pre>
     </main>
 
     <footer class="mastfoot mt-auto">
