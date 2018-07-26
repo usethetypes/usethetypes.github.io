@@ -11,9 +11,13 @@ $(() => {
     return `https://noembed.com/embed?url=https://www.youtube.com/watch?v=${videoId}`;
   }
 
+  function makeInfoUrl(episodeId, videoId) {
+    return `usethetypes-${episodeId.toString().padStart(3, "0")}.html`;
+  }
+
   const videos = [
-    { id: "dN1M8ql1vPQ", episode: 0 },
-    { id: "TLMjeCN32eM", episode: 1 },
+    { id: "dN1M8ql1vPQ", episodeId: 0 },
+    { id: "TLMjeCN32eM", episodeId: 1 },
     { id: "iNeLpmjowwQ" },
     { id: "cDYn_la-9vg" },
     { id: "hp-uQZ-MujA" },
@@ -29,12 +33,13 @@ $(() => {
   for (let i = 0; i < videos.length; ++i) {
     const video = videos[i];
     const videoId = video.id;
+    const videoUrl = makeVideoUrl(videoId);
 
     const div = $(divTemplate.html());
     div.attr("id", `video-${videoId}`);
 
     const anchor = div.find("> :first-child");
-    anchor.attr("href", makeVideoUrl(videoId));
+    anchor.attr("href", videoUrl);
 
     const image = anchor.find("> :first-child");
     image.attr("src", makeImageUrl(videoId));
@@ -49,13 +54,22 @@ $(() => {
       url: makeNoEmbedUrl(videoId),
       dataType: "json"
     }).then(response => {
-      const title = typeof video.episode == "undefined"
-        ? `TEST: ${response.title}`
-        : response.title;
+      const innerDiv = div.find("div:first");
+      const isEpisode = typeof video.episodeId != "undefined";
+      const title = isEpisode ? response.title : `TEST: ${response.title}`;
       anchor
         .attr("title", title)
         .attr("alt", title);
-      div.find("p").text(title);
+      innerDiv.find("a:first")
+        .attr("href", videoUrl)
+        .text(title);
+      if (isEpisode) {
+        innerDiv.find("a:eq(1)")
+          .attr("href", makeInfoUrl(video.episodeId, videoId));
+      }
+      else {
+        innerDiv.find("a:eq(1)").toggle(false);
+      }
     });
   }
 });
