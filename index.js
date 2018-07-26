@@ -13,6 +13,7 @@ $(() => {
 
   const videos = [
     { id: "dN1M8ql1vPQ", episode: 0 },
+    { id: "TLMjeCN32eM", episode: 1 },
     { id: "iNeLpmjowwQ" },
     { id: "cDYn_la-9vg" },
     { id: "hp-uQZ-MujA" },
