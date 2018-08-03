@@ -12,7 +12,7 @@ $(() => {
   }
 
   function makeInfoUrl(episodeId, slug, videoId) {
-    return `videos/ ${episodeId.toString().padStart(3, "0")}-${slug}`;
+    return `videos/${episodeId.toString().padStart(3, "0")}-${slug}`;
   }
 
   const videos = [
