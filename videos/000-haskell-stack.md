@@ -1,8 +1,9 @@
 ---
 title: "usethetypes#0: Haskell Stack"
-layout: synopsis
+layout: video
+categories: videos
 youtube_id: dN1M8ql1vPQ
-episode_id: "000"
+episode_id: 0
 slug: haskell-stack
 ---
 In this episode of usethetypes, I'll show you how to install

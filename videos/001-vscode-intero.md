@@ -1,8 +1,9 @@
 ---
 title: "usethetypes#1: VSCode and Intero"
-layout: synopsis
+layout: video
+categories: videos
 youtube_id: TLMjeCN32eM
-episode_id: "001"
+episode_id: 1
 slug: vscode-intero
 ---
 In this video, we'll assume that you've already installed

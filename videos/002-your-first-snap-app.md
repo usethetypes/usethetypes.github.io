@@ -1,8 +1,9 @@
 ---
 title: "usethetypes#2: Your First Snap App"
-layout: synopsis
+layout: video
+categories: videos
 youtube_id: _C3QsKF4UQI
-episode_id: "002"
+episode_id: 2
 slug: your-first-snap-app
 ---
 Now you have working Haskell Stack and VSCode installations, we can

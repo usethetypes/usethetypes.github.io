@@ -11,66 +11,49 @@ $(() => {
     return `https://noembed.com/embed?url=https://www.youtube.com/watch?v=${videoId}`;
   }
 
-  function makeInfoUrl(episodeId, slug, videoId) {
-    return `videos/${episodeId.toString().padStart(3, "0")}-${slug}`;
-  }
+  function renderCarousel(videos) {
+    const divContainer = $("#carousel .carousel-inner");
+    const divTemplate = $("#carousel-template-image");
 
-  const videos = [
-    { id: "dN1M8ql1vPQ", episodeId: 0, slug: "haskell-stack" },
-    { id: "TLMjeCN32eM", episodeId: 1, slug: "vscode-intero" },
-    { id: "_C3QsKF4UQI", episodeId: 2, slug: "your-first-snap-app" },
-    { id: "iNeLpmjowwQ" },
-    { id: "cDYn_la-9vg" },
-    { id: "hp-uQZ-MujA" },
-    { id: "uB7ES5-JhQA" },
-    { id: "vcE9BlW74tg" },
-    { id: "sP6Iuwd_Nik" },
-    { id: "9qiRk5la724" }
-  ];
+    for (let i = 0; i < videos.length; ++i) {
+      const video = videos[i];
+      const videoId = video.id;
+      const videoUrl = makeVideoUrl(videoId);
 
-  const divContainer = $("#carousel .carousel-inner");
-  const divTemplate = $("#carousel-template-image");
+      const div = $(divTemplate.html());
+      div.attr("id", `video-${videoId}`);
 
-  for (let i = 0; i < videos.length; ++i) {
-    const video = videos[i];
-    const videoId = video.id;
-    const videoUrl = makeVideoUrl(videoId);
+      const anchor = div.find("> :first-child");
+      anchor.attr("href", videoUrl);
 
-    const div = $(divTemplate.html());
-    div.attr("id", `video-${videoId}`);
+      const image = anchor.find("> :first-child");
+      image.attr("src", makeImageUrl(videoId));
 
-    const anchor = div.find("> :first-child");
-    anchor.attr("href", videoUrl);
+      if (i == 0) {
+        div.addClass("active");
+      }
 
-    const image = anchor.find("> :first-child");
-    image.attr("src", makeImageUrl(videoId));
+      divContainer.append(div);
 
-    if (i == 0) {
-      div.addClass("active");
-    }
-
-    divContainer.append(div);
-
-    $.get({
-      url: makeNoEmbedUrl(videoId),
-      dataType: "json"
-    }).then(response => {
-      const innerDiv = div.find("div:first");
-      const isEpisode = typeof video.episodeId != "undefined" && typeof video.slug != "undefined";
-      const title = isEpisode ? response.title : `TEST: ${response.title}`;
-      anchor
-        .attr("title", title)
-        .attr("alt", title);
-      innerDiv.find("a:first")
-        .attr("href", videoUrl)
-        .text(title);
-      if (isEpisode) {
+      $.get({
+        url: makeNoEmbedUrl(videoId),
+        dataType: "json"
+      }).then(response => {
+        const innerDiv = div.find("div:first");
+        anchor
+          .attr("title", response.title)
+          .attr("alt", response.title);
+        innerDiv.find("a:first")
+          .attr("href", videoUrl)
+          .text(response.title);
         innerDiv.find("a:eq(1)")
-          .attr("href", makeInfoUrl(video.episodeId, video.slug, videoId));
-      }
-      else {
-        innerDiv.find("a:eq(1)").toggle(false);
-      }
-    });
+          .attr("href", video.href);
+      });
+    }
   }
+
+  $.get({
+    url: "/videos.json",
+    dataType: "json"
+  }).then(renderCarousel);
 });

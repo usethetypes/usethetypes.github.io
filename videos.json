@@ -1,0 +1,15 @@
+---
+---
+[
+{% assign first = true %}
+{% for p in site.pages %}
+  {% if p.categories contains 'videos' %}
+  {% if first %}
+  {% assign first = false %}
+  {% else %}
+  ,
+  {% endif %}
+  { "id": "{{ p.youtube_id }}", "episodeId": {{ p.episode_id }}, "slug": "{{ p.slug }}", "href": "/videos/{{ p.episode_id | prepend: '000' | slice: -3, 3 }}-{{ p.slug }}" }
+  {% endif %}
+{% endfor %}
+]
