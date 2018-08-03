@@ -11,12 +11,11 @@
   <link href="/default.css" rel="stylesheet">
 </head>
 
-<body class="transcript">
+<body>
 
   <div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
     <header class="masthead mb-auto">
       <div class="inner">
-        <h3 class="masthead-brand">usethetypes.com</h3>
         <nav class="nav nav-masthead justify-content-center">
           <a class="nav-link" href="/">Home</a>
           <a class="nav-link" href="/features">Features</a>
@@ -25,7 +24,7 @@
       </div>
     </header>
 
-    <main role="main" class="inner cover">
+    <main role="main" class="inner transcript">
       <h2>{{ page.title | markdownify | remove: '<p>' | remove: '</p>' | strip_html }}</h2>
 
       <p>
