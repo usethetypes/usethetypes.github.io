@@ -18,6 +18,7 @@ $(() => {
   const videos = [
     { id: "dN1M8ql1vPQ", episodeId: 0, slug: "haskell-stack" },
     { id: "TLMjeCN32eM", episodeId: 1, slug: "vscode-intero" },
+    { id: "_C3QsKF4UQI", episodeId: 2, slug: "your-first-snap-app" },
     { id: "iNeLpmjowwQ" },
     { id: "cDYn_la-9vg" },
     { id: "hp-uQZ-MujA" },
