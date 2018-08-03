@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <link href="favicon.ico" rel="icon">
+  <title>{{ page.title | markdownify | remove: '<p>' | remove: '</p>' | strip_html }}</title>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.2/css/bootstrap.min.css" rel="stylesheet">
+  <link href="/default.css" rel="stylesheet">
+</head>
+
+<body class="transcript">
+
+  <div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
+    <header class="masthead mb-auto">
+      <div class="inner">
+        <h3 class="masthead-brand">usethetypes.com</h3>
+        <nav class="nav nav-masthead justify-content-center">
+          <a class="nav-link" href="index.html">Home</a>
+          <a class="nav-link" href="features.html">Features</a>
+          <a class="nav-link" href="contact.html">Contact</a>
+        </nav>
+      </div>
+    </header>
+
+    <main role="main" class="inner cover">
+      <h2>{{ page.title | markdownify | remove: '<p>' | remove: '</p>' | strip_html }}</h2>
+
+      <p>
+        <a href="https://youtu.be/{{ page.youtube_id }}">Watch video in YouTube</a>
+      </p>
+      <p>
+        <a href="https://github.com/usethetypes/usethetypes-{{ page.episode_id }}-{{ page.slug }}">Source code in GitHub</a>
+      </p>
+
+      {{ content }}
+    </main>
+
+    <footer class="mastfoot mt-auto">
+      <div class="inner">
+        <p>&copy; 2018 usethetypes.com</p>
+      </div>
+    </footer>
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/popper.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.2/js/bootstrap.min.js"></script>
+</body>
+</html>

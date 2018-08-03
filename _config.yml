@@ -1,0 +1,6 @@
+title: usethetypes.com
+author: Richard Cook
+layouts_dir: _layouts
+excerpt_separator: <!--more-->
+plugins:
+- jekyll-gist
