@@ -32,7 +32,7 @@
         <a href="https://youtu.be/{{ page.youtube_id }}">Watch video in YouTube</a>
       </p>
       <p>
-        <a href="https://github.com/usethetypes/usethetypes-{{ page.episode_id }}-{{ page.slug }}">Source code in GitHub</a>
+        <a href="https://github.com/usethetypes/usethetypes-{{ page.episode_id | prepend: '000' | slice: -3, 3 }}-{{ page.slug }}">Source code in GitHub</a>
       </p>
 
       {{ content }}
