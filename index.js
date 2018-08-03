@@ -11,13 +11,13 @@ $(() => {
     return `https://noembed.com/embed?url=https://www.youtube.com/watch?v=${videoId}`;
   }
 
-  function makeInfoUrl(episodeId, videoId) {
-    return `usethetypes-${episodeId.toString().padStart(3, "0")}.html`;
+  function makeInfoUrl(episodeId, slug, videoId) {
+    return `usethetypes-${episodeId.toString().padStart(3, "0")}-${slug}.html`;
   }
 
   const videos = [
-    { id: "dN1M8ql1vPQ", episodeId: 0 },
-    { id: "TLMjeCN32eM", episodeId: 1 },
+    { id: "dN1M8ql1vPQ", episodeId: 0, slug: "haskell-stack" },
+    { id: "TLMjeCN32eM", episodeId: 1, slug: "vscode-intero" },
     { id: "iNeLpmjowwQ" },
     { id: "cDYn_la-9vg" },
     { id: "hp-uQZ-MujA" },
@@ -55,7 +55,7 @@ $(() => {
       dataType: "json"
     }).then(response => {
       const innerDiv = div.find("div:first");
-      const isEpisode = typeof video.episodeId != "undefined";
+      const isEpisode = typeof video.episodeId != "undefined" && typeof video.slug != "undefined";
       const title = isEpisode ? response.title : `TEST: ${response.title}`;
       anchor
         .attr("title", title)
@@ -65,7 +65,7 @@ $(() => {
         .text(title);
       if (isEpisode) {
         innerDiv.find("a:eq(1)")
-          .attr("href", makeInfoUrl(video.episodeId, videoId));
+          .attr("href", makeInfoUrl(video.episodeId, video.slug, videoId));
       }
       else {
         innerDiv.find("a:eq(1)").toggle(false);
