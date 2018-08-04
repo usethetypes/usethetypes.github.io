@@ -10,12 +10,10 @@
     <main role="main" class="inner transcript">
       <h2>{{ page.title | markdownify | remove: '<p>' | remove: '</p>' | strip_html }}</h2>
 
-      <p>
-        <a href="https://youtu.be/{{ page.youtube_id }}">Watch video in YouTube</a>
-      </p>
-      <p>
-        <a href="https://github.com/usethetypes/usethetypes-{{ page.episode_id | prepend: '000' | slice: -3, 3 }}-{{ page.slug }}">Source code in GitHub</a>
-      </p>
+      <ul>
+        <li><a href="https://youtu.be/{{ page.youtube_id }}">Watch video in YouTube</a></li>
+        <li><a href="https://github.com/usethetypes/usethetypes-{{ page.episode_id | prepend: '000' | slice: -3, 3 }}-{{ page.slug }}">Source code in GitHub</a></li>
+      </ul>
 
       {{ content }}
     </main>

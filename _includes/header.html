@@ -1,10 +1,13 @@
 <header class="masthead mb-auto">
   <div class="inner">
-    {% unless page.categories contains "videos" %}
+    {% unless page.categories contains 'videos' %}
     <h3 class="masthead-brand">usethetypes.com</h3>
     {% endunless %}
     <nav class="nav nav-masthead justify-content-center">
       <a class="nav-link {% if page.url == '/' %}active{% endif %}" href="/">Home</a>
+      {% if page.categories contains 'videos' %}
+      <a class="nav-link {% if page.url == '/all.html' %}active{% endif %}" href="/all">All</a>
+      {% endif %}
       <a class="nav-link {% if page.url == '/features.html' %}active{% endif %}" href="/features">Features</a>
       <a class="nav-link {% if page.url == '/contact.html' %}active{% endif %}" href="/contact">Contact</a>
     </nav>
