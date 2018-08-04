@@ -5,16 +5,7 @@
 <body class="text-center">
 
   <div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
-    <header class="masthead mb-auto">
-      <div class="inner">
-        <h3 class="masthead-brand">usethetypes.com</h3>
-        <nav class="nav nav-masthead justify-content-center">
-          <a class="nav-link {% if page.url == '/' %}active{% endif %}" href="/">Home</a>
-          <a class="nav-link {% if page.url == '/features.html' %}active{% endif %}" href="/features">Features</a>
-          <a class="nav-link {% if page.url == '/contact.html' %}active{% endif %}" href="/contact">Contact</a>
-        </nav>
-      </div>
-    </header>
+    {% include header.html %}
 
     <main role="main" class="inner cover">
       {{ content }}

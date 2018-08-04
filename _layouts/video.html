@@ -5,15 +5,7 @@
 <body>
 
   <div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
-    <header class="masthead mb-auto">
-      <div class="inner">
-        <nav class="nav nav-masthead justify-content-center">
-          <a class="nav-link" href="/">Home</a>
-          <a class="nav-link" href="/features">Features</a>
-          <a class="nav-link" href="/contact">Contact</a>
-        </nav>
-      </div>
-    </header>
+    {% include header.html %}
 
     <main role="main" class="inner transcript">
       <h2>{{ page.title | markdownify | remove: '<p>' | remove: '</p>' | strip_html }}</h2>
