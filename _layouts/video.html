@@ -1,15 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="">
-  <meta name="author" content="">
-  <link href="favicon.ico" rel="icon">
-  <title>{{ page.title | markdownify | remove: '<p>' | remove: '</p>' | strip_html }}</title>
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.2/css/bootstrap.min.css" rel="stylesheet">
-  <link href="/default.css" rel="stylesheet">
-</head>
+{% include head.html %}
 
 <body>
 
@@ -37,15 +28,9 @@
       {{ content }}
     </main>
 
-    <footer class="mastfoot mt-auto">
-      <div class="inner">
-        <p>&copy; 2018 usethetypes.com</p>
-      </div>
-    </footer>
+    {% include footer.html %}
   </div>
 
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/popper.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.2/js/bootstrap.min.js"></script>
+  {% include scripts.html %}
 </body>
 </html>
