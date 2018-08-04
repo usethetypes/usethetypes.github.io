@@ -132,3 +132,13 @@ pre {
   text-decoration: underline;
   color: orange;
 }
+
+.relaxed {
+  list-style-type: none;
+  padding: 0;
+}
+
+.relaxed li {
+  padding-top: 0.2em;
+  padding-bottom: 0.4em;
+}

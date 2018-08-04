@@ -9,7 +9,13 @@
   {% else %}
   ,
   {% endif %}
-  { "id": "{{ p.youtube_id }}", "episodeId": {{ p.episode_id }}, "slug": "{{ p.slug }}", "href": "/videos/{{ p.episode_id | prepend: '000' | slice: -3, 3 }}-{{ p.slug }}" }
+  {
+    "title": "{{ p.title }}",
+    "youTubeId": "{{ p.youtube_id }}",
+    "episodeId": {{ p.episode_id }},
+    "slug": "{{ p.slug }}",
+    "href": "/videos/{{ p.episode_id | prepend: '000' | slice: -3, 3 }}-{{ p.slug }}"
+  }
   {% endif %}
 {% endfor %}
 ]

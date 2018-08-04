@@ -1,59 +1,52 @@
 $(() => {
-  function makeVideoUrl(videoId) {
-    return `https://youtu.be/${videoId}`;
+  function makeYouTubeUrl(video) {
+    return `https://youtu.be/${video.youTubeId}`;
   }
 
-  function makeImageUrl(videoId) {
-    return `https://img.youtube.com/vi/${videoId}/maxresdefault.jpg`;
+  function makeImageUrl(video) {
+    return `https://img.youtube.com/vi/${video.youTubeId}/maxresdefault.jpg`;
   }
 
-  function makeNoEmbedUrl(videoId) {
-    return `https://noembed.com/embed?url=https://www.youtube.com/watch?v=${videoId}`;
-  }
-
-  function renderCarousel(videos) {
-    const divContainer = $("#carousel .carousel-inner");
-    const divTemplate = $("#carousel-template-image");
-
-    for (let i = 0; i < videos.length; ++i) {
-      const video = videos[i];
-      const videoId = video.id;
-      const videoUrl = makeVideoUrl(videoId);
-
-      const div = $(divTemplate.html());
-      div.attr("id", `video-${videoId}`);
-
-      const anchor = div.find("> :first-child");
-      anchor.attr("href", videoUrl);
-
-      const image = anchor.find("> :first-child");
-      image.attr("src", makeImageUrl(videoId));
-
-      if (i == 0) {
-        div.addClass("active");
-      }
-
-      divContainer.append(div);
-
-      $.get({
-        url: makeNoEmbedUrl(videoId),
-        dataType: "json"
-      }).then(response => {
-        const innerDiv = div.find("div:first");
-        anchor
-          .attr("title", response.title)
-          .attr("alt", response.title);
-        innerDiv.find("a:first")
-          .attr("href", videoUrl)
-          .text(response.title);
-        innerDiv.find("a:eq(1)")
-          .attr("href", video.href);
-      });
-    }
+  function makeNoEmbedUrl(video) {
+    return `https://noembed.com/embed?url=https://www.youtube.com/watch?v=${video.youTubeId}`;
   }
 
   $.get({
     url: "/videos.json",
     dataType: "json"
-  }).then(renderCarousel);
+  }).then(videos => {
+    const container = $("#carousel .carousel-inner");
+    const divTemplate = $("#carousel-image-template");
+
+    for (const video of videos) {
+      const youTubeUrl = makeYouTubeUrl(video);
+
+      const div = $(divTemplate.html());
+
+      const a = div.find("> :first-child");
+      a.attr("href", youTubeUrl);
+
+      const img = a.find("> :first-child");
+      img.attr("src", makeImageUrl(video));
+
+      container.append(div);
+
+      $.get({
+        url: makeNoEmbedUrl(video),
+        dataType: "json"
+      }).then(response => {
+        const innerDiv = div.find("div:first");
+        a
+          .attr("title", response.title)
+          .attr("alt", response.title);
+        innerDiv.find("a:first")
+          .attr("href", youTubeUrl)
+          .text(response.title);
+        innerDiv.find("a:eq(1)")
+          .attr("href", video.href);
+      });
+    }
+
+    container.find("div:first").addClass("active");
+  });
 });
