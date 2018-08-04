@@ -1,6 +1,6 @@
 $(() => {
     $.get({
-    url: "/videos.json",
+    url: `/videos.json?${TAG}`,
     dataType: "json"
   }).then(videos => {
     const ul = $("#videos");
