@@ -4,10 +4,11 @@
 
 ## Install prerequisites
 
+This project makes use of [rbenv][rbenv] to manage Ruby versions. Once you have rbenv installed, you can proceed to the next step:
+
+
 ```
-rbenv install 2.5.1
-gem install bundler
-bundle install
+make init
 ```
 
 ## Preview
@@ -27,4 +28,5 @@ make test
 Released under the [MIT License][licence]
 
 [licence]: LICENSE
+[rbenv]: https://github.com/rbenv/rbenv
 [usethetypes]: https://usethetypes.com/
