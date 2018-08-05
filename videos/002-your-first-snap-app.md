@@ -11,6 +11,14 @@ create our first [Snap][snap-framework] application in Haskell. This
 application will show you how to respond to the top-level route and how
 to use alternation to handle named routes as well as a default route.
 
+### Builds on
+
+* [usethetypes#1: VSCode and Intero][001-vscode-intero]
+
+### Notes
+
+* This tutorial assumes that you have a working Haskell Stack installation as well as an editor, such as VSCode, set up for editing your code
+
 ### Step 1: Create starter project
 
 ```bash
@@ -188,4 +196,9 @@ main = quickHttpServe $
 You've created your first Snap app. You can build, run it and test it in
 your browser.
 
+### Next steps
+
+Watch this space!
+
+[001-vscode-intero]: /videos/001-vscode-intero
 [snap-framework]: http://snapframework.com/

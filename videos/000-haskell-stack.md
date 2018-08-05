@@ -22,17 +22,33 @@ clean up the desktop and install my [favourite][chrome] web browser
 
 ### Step 1: Install Haskell Stack
 
+Full installation instructions for Haskell Stack are available on its
+[web site][haskell-stack]. To view these, open up your web browser and visit `https://haskellstack.org/`. For Unix-like operating systems, there are two main commands described which are largely equivalent: one using `curl` and the second using `wget`. We'll use the `wget` variant since this command is most likely to be present on a clean installation of Ubuntu 18.04:
+
 ```bash
 wget -qO- https://get.haskellstack.org/ | sh
+```
+
+The `wget` command will need to run some commands as `root` and so will prompt you for your password via `sudo`.
+
+Once that has finished, you'll notice that the output references a `.local/bin` directory. This is a user-wide location where Stack will copy executables when using the `stack install` command. This is a useful location to have available at all times, so we should add this path to the `PATH` environment variable in your bash configuration file:
+
+```bash
 echo 'export PATH=$HOME/.local/bin:$PATH' >> ~/.bashrc
 mkdir $HOME/.local/bin
 ```
 
+Adjust this to taste.
+
 ### Step 2: Check Haskell Stack version
+
+You should check the version of Stack you have installed:
 
 ```bash
 stack --version
 ```
+
+This video assumes that you have at least version 1.7.1.
 
 ### Step 3: Create a "Hello World" project
 
@@ -48,6 +64,11 @@ stack exec hello-world
 cat src/Main.hs
 ```
 
+### Next steps
+
+* [usethetypes#1: VSCode and Intero][001-vscode-intero]
+
+[001-vscode-intero]: /videos/001-vscode-intero
 [chrome]: https://chrome.google.com/
 [haskell-stack]: https://docs.haskellstack.org/en/stable/README/
 [ubuntu-desktop]: https://www.ubuntu.com/download/desktop
