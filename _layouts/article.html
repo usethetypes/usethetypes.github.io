@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+{% include head.html %}
+
+<body>
+
+  <div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
+    {% include header.html %}
+
+    <main role="main" class="inner transcript">
+
+      <h2>{{ page.title | markdownify | remove: '<p>' | remove: '</p>' | strip_html }}</h2>
+
+      {{ content }}
+    </main>
+
+    {% include footer.html %}
+  </div>
+
+  {% include scripts.html %}
+</body>
+</html>
