@@ -7,10 +7,6 @@ $(() => {
     return `https://img.youtube.com/vi/${video.youTubeId}/maxresdefault.jpg`;
   }
 
-  function makeNoEmbedUrl(video) {
-    return `https://noembed.com/embed?url=https://www.youtube.com/watch?v=${video.youTubeId}`;
-  }
-
   $.get({
     url: `/videos.json?${TAG}`,
     dataType: "json"
@@ -31,20 +27,15 @@ $(() => {
 
       container.append(div);
 
-      $.get({
-        url: makeNoEmbedUrl(video),
-        dataType: "json"
-      }).then(response => {
-        const innerDiv = div.find("div:first");
-        a
-          .attr("title", response.title)
-          .attr("alt", response.title);
-        innerDiv.find("a:first")
-          .attr("href", youTubeUrl)
-          .text(response.title);
-        innerDiv.find("a:eq(1)")
-          .attr("href", video.href);
-      });
+      const innerDiv = div.find("div:first");
+      a
+        .attr("title", video.title)
+        .attr("alt", video.title);
+      innerDiv.find("a:first")
+        .attr("href", youTubeUrl)
+        .text(video.title);
+      innerDiv.find("a:eq(1)")
+        .attr("href", video.href);
     }
 
     container.find("div:first").addClass("active");
