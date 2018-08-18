@@ -47,7 +47,7 @@ stack exec which intero
 From your project directory, restart VSCode:
 
 ```bash
-cd `~/src/hello-world
+cd ~/src/hello-world
 code .
 ```
 
