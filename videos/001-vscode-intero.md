@@ -70,8 +70,8 @@ It also provides red squigglies or underlines and tooltips with compiler errors 
 
 * [usethetypes#2: Your First Snap App][002-your-first-snap-app]
 
-[000-haskell-stack]: /videos/000-haskell-stack
-[002-your-first-snap-app]: /videos/002-your-first-snap-app
+[000-haskell-stack]: 000-haskell-stack
+[002-your-first-snap-app]: 002-your-first-snap-app
 [haskell-stack]: https://docs.haskellstack.org/en/stable/README/
 [haskero]: https://marketplace.visualstudio.com/items?itemName=Vans.haskero
 [intero]: https://github.com/commercialhaskell/intero

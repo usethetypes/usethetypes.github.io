@@ -68,7 +68,7 @@ cat src/Main.hs
 
 * [usethetypes#1: VSCode and Intero][001-vscode-intero]
 
-[001-vscode-intero]: /videos/001-vscode-intero
+[001-vscode-intero]: 001-vscode-intero
 [chrome]: https://chrome.google.com/
 [haskell-stack]: https://docs.haskellstack.org/en/stable/README/
 [ubuntu-desktop]: https://www.ubuntu.com/download/desktop

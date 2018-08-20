@@ -200,5 +200,5 @@ your browser.
 
 Watch this space!
 
-[001-vscode-intero]: /videos/001-vscode-intero
+[001-vscode-intero]: 001-vscode-intero
 [snap-framework]: http://snapframework.com/
