@@ -52,7 +52,7 @@ code .
 
 Check the output in your browser at `http://localhost:8000`.
 
-First, kill the program with `Ctrl+C`. We can then return to VSCode and open an integrated terminal using ``Ctrl+` `` and fire up GHCi:
+First, kill the program with `Ctrl+C`. We can then return to VSCode and open an integrated terminal using ``Ctrl+` `` and fire up GHCi (Glasgow Haskell Compiler Interactive):
 
 ```shell
 stack ghci
