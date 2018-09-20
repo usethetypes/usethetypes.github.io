@@ -43,7 +43,6 @@ git init
 git add .
 
 # Build and run program in terminal
-stack build intero
 stack build --fast
 stack exec snap-hello-world
 
