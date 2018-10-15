@@ -82,6 +82,13 @@ I haven't yet figured out how to kill a running web server without killing GHCi.
 
 Our future development efforts will involve a combination of Haskero, Intero, GHCi and ghcid. I will mix and match. You should do the same to find out what works for you.
 
+### Next steps
+
+Next up:
+
+* [usethetypes#5: Simple Site with Static Content][005-simple-site]
+
 [003-rapid-dev-ghci]: 003-rapid-dev-ghci
+[005-simple-site]: 005-simple-site
 [ghcid]: https://github.com/ndmitchell/ghcid
 [index]: index.md
