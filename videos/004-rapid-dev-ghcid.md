@@ -1,5 +1,5 @@
 ---
-title: "usethetypes#4: Rapid development with ghcid"
+title: "usethetypes#4: Rapid Development with ghcid"
 layout: video
 categories: videos
 youtube_id: c_BfMElBqcQ

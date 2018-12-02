@@ -1,5 +1,5 @@
 ---
-title: "usethetypes#3: Rapid development with GHCi"
+title: "usethetypes#3: Rapid Development with GHCi"
 layout: video
 categories: videos
 youtube_id: nDFSKTLUwvE
