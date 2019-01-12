@@ -249,10 +249,6 @@ We can save all of those changes and test it out at `http://localhost:8000`. Voi
 
 Next time we'll do some more advanced things with Ginger.
 
-### Next steps
-
-* [usethetypes#11: More Ginger][011-more-ginger]
-
 [007-config-port]: 007-config-port
 [008-heroku]: 008-heroku
 [009-cleanup]: 009-cleanup
