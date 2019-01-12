@@ -7,6 +7,14 @@ $(() => {
     return `https://img.youtube.com/vi/${video.youTubeId}/maxresdefault.jpg`;
   }
 
+  Array.prototype.rotate = function(n) {
+    return this.slice(n, this.length).concat(this.slice(0, n));
+  }
+
+  function randomInt(min, max) {
+    return Math.floor(Math.random() * (max - min)) + min;
+  }
+
   $.get({
     url: `/videos.json?${TAG}`,
     dataType: "json"
@@ -14,7 +22,7 @@ $(() => {
     const container = $("#carousel .carousel-inner");
     const divTemplate = $("#carousel-image-template");
 
-    for (const video of videos) {
+    for (const video of videos.rotate(randomInt(0, videos.length))) {
       const youTubeUrl = makeYouTubeUrl(video);
 
       const div = $(divTemplate.html());
