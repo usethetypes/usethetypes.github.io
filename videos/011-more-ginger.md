@@ -145,11 +145,13 @@ showInfo =
 
 Add the following to our template:
 
+{% raw %}
 ```haskell
     {% for item in items %}
       <p>{{ item }}</p>
     {% endfor %}
 ```
+{% endraw %}
 
 ### Step 8: Check it out in your browser
 
