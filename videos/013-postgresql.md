@@ -6,7 +6,17 @@ youtube_id: TBD
 episode_id: 13
 slug: postgresql
 ---
-TBD
+We have environment variables visible to us
+
+### Builds on
+
+* [usethetypes#12: Displaying our Application's Environment][012-app-environment]
+
+
+
+
+
+
 
 
 
