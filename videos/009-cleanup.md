@@ -72,7 +72,7 @@ Here's a little script that I typically run on newly checking out a project in o
 mkdir -p script
 cat << EOF > script/dev
 #!/bin/bash
-stack build intero
+stack build --copy-compiler-tool intero
 stack build --copy-compiler-tool ghcid
 EOF
 chmod +x script/dev

@@ -23,7 +23,7 @@ package.
 ```bash
 cd ~/src/hello-world
 stack exec which intero
-stack build intero
+stack build --copy-compiler-tool intero
 ```
 
 This may fail on a clean Ubuntu installation due to missing
@@ -38,7 +38,7 @@ as macOS and Windows will have slightly different names:
 
 ```bash
 sudo apt-get install libtinfo-dev
-stack build intero
+stack build --copy-compiler-tool intero
 stack exec which intero
 ```
 
