@@ -1,4 +1,4 @@
-# usethetypes.com web site
+# usethetypes.github.io web site
 
 [Check it out][usethetypes]
 
@@ -29,4 +29,4 @@ Released under the [MIT License][licence]
 
 [licence]: LICENSE
 [rbenv]: https://github.com/rbenv/rbenv
-[usethetypes]: https://usethetypes.com/
+[usethetypes]: https://usethetypes.github.io/

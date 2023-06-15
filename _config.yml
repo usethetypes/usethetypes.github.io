@@ -1,6 +1,6 @@
-title: usethetypes.com
+title: usethetypes.github.io
 author: Richard Cook
 layouts_dir: _layouts
 excerpt_separator: <!--more-->
 plugins:
-- jekyll-gist
+  - jekyll-gist
